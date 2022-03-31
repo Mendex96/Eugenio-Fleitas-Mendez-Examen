@@ -27,17 +27,17 @@ public class GradePresenter implements GradeContract.Presenter {
   public void onStart() {
     // Log.e(TAG, "onStart()");
 
-    // TODO: include code here if is necessary
+
 
     // use passed state if is necessary
     StudentToGradeState savedState = getStateFromPreviousScreen();
     if (savedState != null) {
+      state.data = savedState.data;
+      model.onDataFromPreviousScreen(state.data);
+      }
+      view.get().onDataUpdated(state);
 
-      // TODO: include code here if is necessary
 
-    }
-
-    // TODO: include code here if is necessary
 
   }
 
@@ -45,52 +45,55 @@ public class GradePresenter implements GradeContract.Presenter {
   public void onRestart() {
     // Log.e(TAG, "onRestart()");
 
-    // TODO: include code here if is necessary
+    model.onRestartScreen(state.data);
+    view.get().onDataUpdated(state);
   }
 
   @Override
   public void onResume() {
     // Log.e(TAG, "onResume()");
 
-    // TODO: include code here if is necessary
+
 
   }
 
   @Override
   public void onBackPressed() {
     // Log.e(TAG, "onBackPressed()");
-
-    // TODO: include code here if is necessary
   }
 
   @Override
   public void onPause() {
     // Log.e(TAG, "onPause()");
 
-    // TODO: include code here if is necessary
+
   }
 
   @Override
   public void onDestroy() {
     // Log.e(TAG, "onDestroy()");
 
-    // TODO: include code here if is necessary
+
   }
 
 
   @Override
   public void onHigherGradeBtnClicked() {
 
-    // TODO: include code here if is necessary
-    state.data = "onHigherGradeBtnClicked";
-
+    GradeToStudentState gradeToStudentState = new GradeToStudentState();
+    String[] data = state.data.split(",");
+    gradeToStudentState.data = data[1];
+    passStateToPreviousScreen(gradeToStudentState);
+    view.get().navigateToPreviousScreen();
   }
 
   @Override
   public void onLowerGradeBtnClicked() {
-
-    state.data = "onHigherGradeBtnClicked";
-
+    GradeToStudentState gradeToStudentState = new GradeToStudentState();
+    String[] data = state.data.split(",");
+    gradeToStudentState.data = data[0];
+    passStateToPreviousScreen(gradeToStudentState);
+    view.get().navigateToPreviousScreen();
   }
 
   private void passStateToPreviousScreen(GradeToStudentState state) {

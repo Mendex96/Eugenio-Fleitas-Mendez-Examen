@@ -7,4 +7,5 @@ public class GradeViewModel {
 
   // put the view state here
   public String data;
+
 }

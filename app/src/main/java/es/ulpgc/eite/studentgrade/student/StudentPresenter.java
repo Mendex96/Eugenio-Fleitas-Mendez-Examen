@@ -74,21 +74,18 @@ public class StudentPresenter implements StudentContract.Presenter {
     Log.e(TAG, "onPause()");
 
 
-
   }
 
   @Override
   public void onDestroy() {
     // Log.e(TAG, "onDestroy()");
 
-
-
   }
 
   @Override
   public void onOutstandingGradeBtnClicked() {
 
-    state.data = "onOutstandingGradeBtnClicked";
+    state.data = "9,10";
     StudentToGradeState studentToGradeState = new StudentToGradeState();
     studentToGradeState.data = state.data;
     passStateToNextScreen(studentToGradeState);
@@ -100,7 +97,7 @@ public class StudentPresenter implements StudentContract.Presenter {
   @Override
   public void onMentionGradeBtnClicked() {
 
-    state.data = "onMentionGradeBtnClicked";
+    state.data = "7,8";
     StudentToGradeState studentToGradeState = new StudentToGradeState();
     studentToGradeState.data = state.data;
     passStateToNextScreen(studentToGradeState);
@@ -111,7 +108,7 @@ public class StudentPresenter implements StudentContract.Presenter {
   @Override
   public void onPassGradeBtnClicked() {
 
-    state.data = "onPassGradeBtnClicked";
+    state.data = "5,6";
     StudentToGradeState studentToGradeState = new StudentToGradeState();
     studentToGradeState.data = state.data;
     passStateToNextScreen(studentToGradeState);

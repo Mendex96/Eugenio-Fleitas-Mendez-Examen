@@ -40,6 +40,7 @@ public interface GradeContract {
   interface Model {
     String getStoredData();
 
+
     void onRestartScreen(String data);
 
     void onDataFromPreviousScreen(String data);

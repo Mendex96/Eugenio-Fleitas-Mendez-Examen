@@ -31,7 +31,7 @@ public class StudentPresenter implements StudentContract.Presenter {
     state.data1 = model.getData1();
     state.data2 = model.getData2();
     state.data3 = model.getData3();
-    state.data = " ";
+    state.data = "0";
     view.get().onDataUpdated(state);
 
 

@@ -23,7 +23,7 @@ public class GradeModel implements GradeContract.Model {
   public void onRestartScreen(String data) {
     // Log.e(TAG, "onRestartScreen()");
 
-    // TODO: include code here if is necessary
+    this.data = data;
 
   }
 
@@ -31,6 +31,7 @@ public class GradeModel implements GradeContract.Model {
   public void onDataFromPreviousScreen(String data) {
     // Log.e(TAG, "onDataFromPreviousScreen()");
 
-    // TODO: include code here if is necessary
+    this.data = data;
+
   }
 }

@@ -26,9 +26,6 @@ public class GradePresenter implements GradeContract.Presenter {
   @Override
   public void onStart() {
     // Log.e(TAG, "onStart()");
-
-
-
     // use passed state if is necessary
     StudentToGradeState savedState = getStateFromPreviousScreen();
     if (savedState != null) {
@@ -81,7 +78,7 @@ public class GradePresenter implements GradeContract.Presenter {
   public void onHigherGradeBtnClicked() {
 
     GradeToStudentState gradeToStudentState = new GradeToStudentState();
-    String[] data = state.data.split(",");
+    String[] data = model.getStoredData().split(",");
     gradeToStudentState.data = data[1];
     passStateToPreviousScreen(gradeToStudentState);
     view.get().navigateToPreviousScreen();

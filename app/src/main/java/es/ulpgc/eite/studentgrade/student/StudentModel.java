@@ -8,9 +8,26 @@ public class StudentModel implements StudentContract.Model {
   public static String TAG = "StudentGrade.StudentModel";
 
   private String data;
+  public String data1 = "OUTSTANDING (9-10)";
+  public String data2 = "MENTION (7-8)";
+  public String data3 = "PASS (5-6)";
+
 
   public StudentModel(String data) {
     this.data = data;
+  }
+
+
+  public String getData2() {
+    return data2;
+  }
+
+  public String getData1() {
+    return data1;
+  }
+
+  public String getData3() {
+    return data3;
   }
 
   @Override
@@ -24,14 +41,15 @@ public class StudentModel implements StudentContract.Model {
   public void onRestartScreen(String data) {
     // Log.e(TAG, "onRestartScreen()");
 
-    // TODO: include code here if is necessary
+
+    this.data = data;
   }
 
   @Override
   public void onDataFromNextScreen(String data) {
     // Log.e(TAG, "onDataFromNextScreen()");
 
-    // TODO: include code here if is necessary
+    this.data = data;
   }
 
 }

@@ -82,13 +82,14 @@ public class GradePresenter implements GradeContract.Presenter {
   public void onHigherGradeBtnClicked() {
 
     // TODO: include code here if is necessary
+    state.data = "onHigherGradeBtnClicked";
 
   }
 
   @Override
   public void onLowerGradeBtnClicked() {
 
-    // TODO: include code here if is necessary
+    state.data = "onHigherGradeBtnClicked";
 
   }
 

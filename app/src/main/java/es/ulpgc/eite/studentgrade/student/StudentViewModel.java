@@ -7,4 +7,7 @@ public class StudentViewModel {
 
   // put the view state here
   public String data;
+  public String data1;
+  public String data2;
+  public String data3;
 }

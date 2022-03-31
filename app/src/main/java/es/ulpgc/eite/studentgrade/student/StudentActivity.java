@@ -92,6 +92,10 @@ public class StudentActivity
 
     // deal with the data
     ((TextView) findViewById(R.id.tvStudentGrade)).setText(viewModel.data);
+    ((TextView) findViewById(R.id.btnPassGrade)).setText((viewModel.data3));
+    ((TextView) findViewById(R.id.btnMentionGrade)).setText((viewModel.data2));
+    ((TextView) findViewById(R.id.btnOutstandingGrade)).setText((viewModel.data1));
+
   }
 
 

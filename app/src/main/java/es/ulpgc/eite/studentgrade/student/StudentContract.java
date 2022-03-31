@@ -42,6 +42,10 @@ public interface StudentContract {
   interface Model {
     String getStoredData();
 
+    String getData1();
+    String getData2();
+    String getData3();
+
     void onDataFromNextScreen(String data);
 
     void onRestartScreen(String data);

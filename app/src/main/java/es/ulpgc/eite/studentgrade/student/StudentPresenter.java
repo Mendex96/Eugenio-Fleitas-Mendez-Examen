@@ -28,16 +28,21 @@ public class StudentPresenter implements StudentContract.Presenter {
   @Override
   public void onStart() {
     Log.e(TAG, "onStart()");
+    state.data1 = model.getData1();
+    state.data2 = model.getData2();
+    state.data3 = model.getData3();
+    state.data = " ";
+    view.get().onDataUpdated(state);
 
-    // TODO: include code here if is necessary
+
 
   }
 
   @Override
   public void onRestart() {
     Log.e(TAG, "onRestart()");
-
-    // TODO: include code here if is necessary
+    model.onRestartScreen(state.data);
+    view.get().onDataUpdated(state);
 
   }
 
@@ -49,11 +54,11 @@ public class StudentPresenter implements StudentContract.Presenter {
     GradeToStudentState savedState = getStateFromNextScreen();
     if (savedState != null) {
 
-      // TODO: include code here if is necessary
+      model.onDataFromNextScreen(savedState.data);
+      state.data = model.getStoredData();
 
     }
 
-    // TODO: include code here if is necessary
 
   }
 
@@ -61,14 +66,14 @@ public class StudentPresenter implements StudentContract.Presenter {
   public void onBackPressed() {
     // Log.e(TAG, "onBackPressed()");
 
-    // TODO: include code here if is necessary
+
   }
 
   @Override
   public void onPause() {
     Log.e(TAG, "onPause()");
 
-    // TODO: include code here if is necessary
+
 
   }
 
@@ -76,28 +81,41 @@ public class StudentPresenter implements StudentContract.Presenter {
   public void onDestroy() {
     // Log.e(TAG, "onDestroy()");
 
-    // TODO: include code here if is necessary
+
 
   }
 
   @Override
   public void onOutstandingGradeBtnClicked() {
 
-    // TODO: include code here if is necessary
+    state.data = "onOutstandingGradeBtnClicked";
+    StudentToGradeState studentToGradeState = new StudentToGradeState();
+    studentToGradeState.data = state.data;
+    passStateToNextScreen(studentToGradeState);
+    view.get().navigateToNextScreen();
+
 
   }
 
   @Override
   public void onMentionGradeBtnClicked() {
 
-    // TODO: include code here if is necessary
+    state.data = "onMentionGradeBtnClicked";
+    StudentToGradeState studentToGradeState = new StudentToGradeState();
+    studentToGradeState.data = state.data;
+    passStateToNextScreen(studentToGradeState);
+    view.get().navigateToNextScreen();
 
   }
 
   @Override
   public void onPassGradeBtnClicked() {
 
-    // TODO: include code here if is necessary
+    state.data = "onPassGradeBtnClicked";
+    StudentToGradeState studentToGradeState = new StudentToGradeState();
+    studentToGradeState.data = state.data;
+    passStateToNextScreen(studentToGradeState);
+    view.get().navigateToNextScreen();
 
   }
 

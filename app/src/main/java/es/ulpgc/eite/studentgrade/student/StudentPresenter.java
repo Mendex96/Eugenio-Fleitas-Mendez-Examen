@@ -42,8 +42,8 @@ public class StudentPresenter implements StudentContract.Presenter {
   public void onRestart() {
     Log.e(TAG, "onRestart()");
     model.onRestartScreen(state.data);
+    state.data = state.nota;
     view.get().onDataUpdated(state);
-
   }
 
   @Override
@@ -53,10 +53,10 @@ public class StudentPresenter implements StudentContract.Presenter {
     // use passed state if is necessary
     GradeToStudentState savedState = getStateFromNextScreen();
     if (savedState != null) {
-
       model.onDataFromNextScreen(savedState.data);
-      state.data = model.getStoredData();
-
+      state.nota = model.getStoredData();
+      state.data = state.nota;
+      view.get().onDataUpdated(state);
     }
 
 

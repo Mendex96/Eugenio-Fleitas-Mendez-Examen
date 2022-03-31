@@ -6,4 +6,5 @@ package es.ulpgc.eite.studentgrade.student;
 public class StudentState extends StudentViewModel {
 
   // put the model state here
+   String nota;
 }
